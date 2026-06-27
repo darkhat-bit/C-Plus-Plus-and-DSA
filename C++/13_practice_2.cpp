@@ -36,19 +36,38 @@ int main() {
     else cout << "Not a Prime Number" << endl;
 
 
-    // difference between the Product and the Sum of digits of an integer input N
-    int N;
+    // Sequence product and sum difference
+    int N1;
     cout << "Enter N: ";
-    cin >> N;
-    int prod = 1;
-    int sum = 0;
-    for (int i3 = 1; i3 <= N; i3++) {
-        prod *= i3;
-        sum += i3;
+    cin >> N1;
+    int prod1 = 1;
+    int sum1 = 0;
+    for (int i3 = 1; i3 <= N1; i3++) {
+        prod1 *= i3;
+        sum1 += i3;
     }
-    int result = prod - sum;
-    cout << "Difference between the prod and sum of integer N: " << result << endl;
+    int result1 = prod1 - sum1;
+    cout << "Difference between the prod and sum of integer N: " << result1 << endl;
     
+
+
+    // difference between the Product and the Sum of digits of an integer input N
+    int N2;
+    cout << "Enter N: ";
+    cin >> N2;
+
+    int prod2 = 1;
+    int sum2 = 0;
+    int temp = N2; 
+
+    while (temp > 0) {
+        int lastDigit = temp % 10;
+        prod2 *= lastDigit;
+        sum2 += lastDigit;
+        temp /= 10;
+    }
+    int result2 = prod2 - sum2;
+    cout << "Difference between the product and sum of digits of N: " << result2 << endl;
 
     return 0;
 
