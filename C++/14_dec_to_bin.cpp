@@ -17,6 +17,6 @@ int main() {
         cout << ans << " " << n << " " << base << endl;
     }
 
-    cout << "Binary Output" << ans << endl;
+    cout << "Binary Output: " << ans << endl;
     return 0;
 }
