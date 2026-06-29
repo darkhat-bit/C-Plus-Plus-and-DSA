@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    char ch = '1';
+    int num = 1;
+
+    switch (ch) {
+        case '1':
+            switch (num) {
+                case 1:
+                    cout << "Value of num is 1 inside character case '1'" << endl;
+                    break;
+            }
+            break;
+        default:
+            cout << "This is the default block" << endl;
+    }
+    return 0;
+}
