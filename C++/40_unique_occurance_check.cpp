@@ -1,20 +1,28 @@
 #include <iostream>
 using namespace std;
 
-bool uniqueOccurance(int arr[], int size) {
+bool uniqueOccurrences(int arr[], int size) {
+
+    int freq[2001] = {0};
     for (int i = 0; i < size; i++) {
-        for (int j = i + 1; j < size; j++) {
-            if (arr[i] == arr[j]) {
-                return true;
+        freq[arr[i] + 1000]++;
+    }
+
+    bool freqCheck[1001] = {false};
+    for (int i = 0; i < 2001; i++) {
+        if (freq[i] > 0) {
+            if (freqCheck[freq[i]]) {
+                return false;
             }
+            freqCheck[freq[i]] = true;
         }
     }
-    return false;
+    return true;
+
 }
 
 int main() {
-    int arr[7] = {1, 2, 5, 3, 7, 9, 6};
-    cout << boolalpha;
-    cout << uniqueOccurance(arr, 7);
+    int arr[6] = {1, 2, 2, 1, 1, 3};
+    cout << boolalpha << uniqueOccurrences(arr, 6) << endl;
     return 0;
 }
