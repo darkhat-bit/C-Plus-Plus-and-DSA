@@ -1,14 +1,22 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
-int findDuplicate(int arr[], int size) {
+void findAllDuplicates(int arr[], int size) {
+    cout << "Duplicates: ";
     for (int i = 0; i < size; i++) {
-        
+        int index = abs(arr[i]) - 1;
+        if (arr[index] < 0) {
+            cout << index + 1 << " ";
+        } else {
+            arr[index] = -arr[index];
+        }
     }
+    cout << endl;
 }
 
 int main() {
-    int arr[7] = {1, 2, 3, 4, 3, 2, 6};
-    cout << "Unique Elements: " << findDuplicate(arr, 7) << endl;
+    int arr[8] = {4, 3, 2, 7, 8, 2, 3, 1};
+    findAllDuplicates(arr, 8);
     return 0;
 }
