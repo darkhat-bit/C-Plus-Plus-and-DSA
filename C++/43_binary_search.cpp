@@ -22,8 +22,8 @@ int binarySearch(int arr[], int size, int target) {
 }
 
 int main() {
-    int arr[7] = {1, 2, 3, 4, 6, 8, 9};
-    int resultIndex = binarySearch(arr, 7, 6);
+    int arr[8] = {0, 1, 2, 5, 7, 10, 15, 16};
+    int resultIndex = binarySearch(arr, 8, 7);
     cout << "Element found at index: " << resultIndex << endl;
     return 0;
 }
